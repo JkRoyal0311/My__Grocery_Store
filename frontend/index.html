@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Sai Datha General Stores</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 { font-size: 20px; }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    .search-cart {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .search-cart input {
+      padding: 8px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+    .cart-icon {
+      background: #28a745;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      background: linear-gradient(to right, #d6a51f, #5f8f27);
+      color: white;
+    }
+    .hero-text {
+      max-width: 50%;
+    }
+    .hero-text h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+    .hero-text button {
+      padding: 12px 20px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .shop-btn {
+      background: white;
+      color: purple;
+      font-weight: bold;
+    }
+    .offer-btn {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .hero img {
+      border-radius: 12px;
+      max-width: 450px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f4f4f4;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<!-- Header (replace your existing header with this) -->
+<style>
+  :root{
+    --green-dark: #154618;   /* deep forest green */
+    --green-mid:  #3f8b1f;   /* mid olive green */
+    --gold:       #f6c445;   /* warm gold accent */
+    --white:      #ffffff;
+  }
+
+  /* Header styles */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, var(--green-dark), var(--green-mid));
+    color: var(--white);
+    box-shadow: 0 6px 18px rgba(15,70,25,0.18);
+    backdrop-filter: saturate(120%) blur(0.5px);
+  }
+
+  .site-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 850;
+    letter-spacing: 0.3px;
+  }
+  .logo .brand {
+    font-size: 25px;
+    line-height: 2;
+  }
+  .logo .tagline {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.95;
+  }
+
+  nav.main-nav {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  nav.main-nav a {
+    color: rgba(255,255,255,0.96);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+  }
+  nav.main-nav a:hover,
+  nav.main-nav a:focus {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .header-actions .search {
+    padding: 8px 12px;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    width: 220px;
+    font-size: 14px;
+  }
+  .cart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #16360b;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(20,30,10,0.14);
+  }
+  .cart-btn .count {
+    background: rgba(0,0,0,0.06);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 800;
+    color: #16360b;
+  }
+
+  /* Responsive: hide links on small screens, show compact search */
+  @media (max-width: 800px) {
+    nav.main-nav { display: none; }
+    .header-actions .search { width: 140px; }
+  }
+</style>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="logo" aria-label="Sri Sai Datta General Stores">
+      <div class="emoji" aria-hidden="true" style="font-size:20px;">🛍️</div>
+      <div>
+        <div class="brand">SRI SAI DATHA</div>
+        <div class="tagline">General Stores — Quality & Freshness</div>
+      </div>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <input class="search" type="search" placeholder="Search products..." aria-label="Search products">
+      <button class="cart-btn" onclick="window.location.href='cart.html'" aria-label="Open cart">
+        🛒 <span class="count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Small script to keep cart count synced -->
+<script>
+  function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const total = cart.reduce((s, it) => s + (it.quantity || 0), 0);
+    const el = document.getElementById("cartCount");
+    if (el) el.textContent = total;
+  }
+  updateCartCount();
+  window.addEventListener("storage", updateCartCount);
+</script>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Your Trusted Kirana Store<br> Quality is our First Priority.</h2>
+      <p>Freshness, quality, and affordability meet here—bringing your favorite groceries with care, convenience, and smiles to every home.</p>
+      <button class="shop-btn" onclick="window.location.href='products.html'">Shop Now</button>
+      <a href = "offers.html"><button class="offer-btn">View Offers</button></a>
+    </div>
+    <!-- Updated Image -->
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a28a7cec-4147-488b-a605-6a6cc5b21ace.png" alt="Grocery Store">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sri Sai Datha General Stores</p>
+  </footer>
+
+  <script>
+    // Function to update cart count
+    function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cartCount").textContent = totalItems;
+    }
+
+    // Run on page load
+    updateCartCount();
+
+    // Update if storage changes
+    window.addEventListener("storage", updateCartCount);
+  </script>
+</body>
+</html>

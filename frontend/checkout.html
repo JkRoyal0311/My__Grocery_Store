@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Sri Sai Datta Grocery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛒 Checkout</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <section class="checkout-container">
+        <h2>Order Summary</h2>
+        <ul id="orderSummary"></ul>
+        <h3>Total: ₹<span id="orderTotal">0</span></h3>
+
+        <h2>Customer Details</h2>
+        <form id="checkoutForm">
+            <label>Full Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" required pattern="[0-9]{10}">
+
+            <label>Delivery Address:</label>
+            <textarea name="address" required></textarea>
+
+            <button type="submit" class="btn">Place Order ✅</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Sri Sai Datta Grocery Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function loadOrderSummary() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let summaryList = document.getElementById("orderSummary");
+            summaryList.innerHTML = "";
+            let total = 0;
+
+            cart.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = `${item.name} x ${item.quantity} = ₹${(item.price * item.quantity).toFixed(2)}`;
+                summaryList.appendChild(li);
+                total += item.price * item.quantity;
+            });
+
+            document.getElementById("orderTotal").innerText = total.toFixed(2);
+        }
+
+        document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("✅ Thank you! Your order has been placed successfully.");
+            localStorage.removeItem("cart");
+            window.location.href = "index.html";
+        });
+
+        loadOrderSummary();
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Sri Sai Datta Grocery Store</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<style>
+  /* #ptc{
+    margin-bottom: 50px;
+    margin-right: -20px;
+  } */
+  #total{
+    margin-bottom : 20px;
+  }
+</style>
+<body>
+  <header>
+    <h1>🛒 Your Shopping Cart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="cart-container">
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price (₹)</th>
+          <th>Quantity</th>
+          <th>Total (₹)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h2 id = "total">Total: ₹<span id="cartTotal">0</span></h2>
+      <a href="checkout.html" class="btn" id="ptc">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sri Sai Datta Grocery Store. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let tbody = document.querySelector("#cartTable tbody");
+      tbody.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        tbody.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>
+              <button onclick="updateQuantity(${index}, ${item.quantity - 1})">-</button>
+              ${item.quantity}
+              <button onclick="updateQuantity(${index}, ${item.quantity + 1})">+</button>
+            </td>
+            <td>${itemTotal}</td>
+            <td><button onclick="removeItem(${index})">Remove</button></td>
+          </tr>
+        `;
+      });
+      document.getElementById("cartTotal").textContent = total;
+    }
+
+    function updateQuantity(index, newQty) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (newQty <= 0) {
+        cart.splice(index, 1);
+      } else {
+        cart[index].quantity = newQty;
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    loadCart();
+  </script>
+</body>
+</html>
