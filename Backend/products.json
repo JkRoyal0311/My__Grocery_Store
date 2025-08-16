@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Sugar 1kg", "price": 43, "image": "https://via.placeholder.com/150" },
+  { "id": 2, "name": "Toor Dal 1kg", "price": 100, "image": "https://via.placeholder.com/150" },
+  { "id": 3, "name": "Rice 5kg", "price": 300, "image": "https://via.placeholder.com/150" },
+  { "id": 4, "name": "Wheat Flour 1kg", "price": 50, "image": "https://via.placeholder.com/150" },
+  { "id": 5, "name": "Milk 1L", "price": 45, "image": "https://via.placeholder.com/150" }
+]
